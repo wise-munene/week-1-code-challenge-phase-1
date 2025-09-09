@@ -1,27 +1,19 @@
-// 
-// Ask user for marks
-let marks = prompt("Enter student marks (0 - 100):");
+// student grade generator
+let studentMarks = prompt("Please enter student marks");
+// the user is prompted to enter the marks
 
-// Convert input to a number
-marks = Number(marks);
-
-// Validate input
-if (marks < 0 || marks > 100 || isNaN(marks)) {
-  alert("❌ Invalid input! Please enter a number between 0 and 100.");
+stsudentMarks= parseInt(studentMarks, 10); // prompt is usually string formatted hence we are convcerting it to an integer
+// if marks are above 100, below 0 or anything that is not a number the an alert message will be displayed
+if (isNaN(marks) || marks < 0 || marks > 100) {
+  alert(" Invalid input! Please enter a number between 0 and 100.");
 } else {
-  let grade;
+  let grade;    // grade is undefined it is yet to be assigned values
+  if (marks > 79 && marks<=100) {grade = "A";
+  }else if (marks >= 60 && marks<=79){ grade = "B";
+  }else if (marks >= 49 && marks <=60){ grade = "C";
+  }else if (marks >= 40 && marks <=49){ grade = "D";
+  }else{ grade = "E";}
 
-  if (marks > 79) {
-    grade = "A";
-  } else if (marks >= 60) {
-    grade = "B";
-  } else if (marks >= 49) {
-    grade = "C";
-  } else if (marks >= 40) {
-    grade = "D";
-  } else {
-    grade = "E";
-  }
-
-  alert("✅ Grade: " + grade);
+  alert("✅ Grade: " + grade); // used to show the user what the grade is
 }
+
